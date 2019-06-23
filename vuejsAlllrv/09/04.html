@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phương thức trong Vue.js - allaravel.com</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div id="app">
+        <p>A = {{ addA() }}</p>
+        <p>B = {{ addB() }}</p>
+        <button v-on:click="a++">Thêm 1 vào a</button>
+        <button v-on:click="b++">Thêm 1 vào b</button>
+    </div>
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    <script type="text/javascript">
+        new Vue({
+            el: '#app',
+            data: {
+                a: 0,
+                b: 0
+            },
+            methods: {
+                addA: function(){
+                    console.log('Gọi phương thức addA');
+                    return this.a;
+                },
+                addB: function(){
+                    console.log('Gọi phương thức addB');
+                    return this.b;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

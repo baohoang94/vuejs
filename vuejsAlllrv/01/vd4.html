@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vd4</title>
+</head>
+
+<body>
+    <div id="example-4">
+        <p v-if="seen">Bạn đã thấy rồi.</p>
+
+        <div v-if="Math.random() > 0.5">
+            Now you see me
+        </div>
+        <div v-else>
+            Now you don't
+        </div>
+
+        <!-- <div v-if="type === 'A'">
+            A
+          </div>
+          <div v-else-if="type === 'B'">
+            B
+          </div>
+          <div v-else-if="type === 'C'">
+            C
+          </div>
+          <div v-else>
+            Not A/B/C
+          </div> -->
+
+          <!-- <h1 v-show="ok">Hello!</h1> -->
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.5/vue.min.js"></script>
+    <script type="text/javascript">
+        var example4 = new Vue({
+            el: '#example-4',
+            data: {
+                seen: true
+            }
+        })
+    </script>
+    
+</body>
+
+</html>

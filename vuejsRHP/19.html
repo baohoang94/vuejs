@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Template vuejs</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{ diem }}</p>
+    </div>
+    <script>
+        // Tat ca du lieu truyen qua HTML de o dang du lieu tho
+        // Computed thuc hien nhu 1 function nhung no chi duoc coi la 1 thuoc tinh
+        // computed va watcher thuong di kem voi nhau
+        // watcher theo doi su thay doi cua bien de lam mot hanh dong nao do
+        var app = new Vue({
+            el: '#app',
+            data: {
+                diem: 'Ban A co mon toan 7 diem'
+            },
+            watch: {
+                diem: function(newValue) {
+                    alert('Diem cua ban ay da duoc mot giao vien nao do nhap');
+                }
+            }
+        });
+        // vo tinh 1 giao vien khac nhap diem mon toan
+        app.diem = 'Ban A co mon toan 8 diem';
+    </script>
+</body>
+</html>

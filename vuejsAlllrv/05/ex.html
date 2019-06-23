@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Baif taapj twj lamf</title>
+</head>
+<body>
+    <div id="app">
+        <h1 v-if="user.email == null && user.pass == null" style="color: red;"></h1>
+        <h1 v-else-if="user.email == 'test@allaravel.com' && user.pass == 123456" style="color: green">Bạn đã đăng nhập thành công</h1>
+        <h1 v-else style="color: blue">Thông tin đăng nhập sai. Vui lòng thử lại</h1>
+        <br>
+        <label>Email</label>
+        <input v-model="user.email" placeholder="Nhập vào email">
+        <br>
+        <label>Mật khẩu</label>
+        <input type="password" v-model="user.pass" placeholder="Nhập vào mật khẩu">
+    </div>
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    <script type="text/javascript">
+        new Vue({
+            el: '#app',
+            data: {
+                user: {}
+            }
+        })
+    </script>
+</body>
+</html>

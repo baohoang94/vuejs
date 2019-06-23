@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Template vuejs</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>Gia tri A: {{ tanga }}</p>
+        <p>Gia tri B: {{ tangb }}</p>
+        <p>Gia tri A: {{ tangaf() }}</p>
+        <p>Gia tri B: {{ tangbf() }}</p>
+        <button v-on:click="a++">Tang A</button>
+        <button v-on:click="b++">Tang B</button>
+    </div>
+    <script>
+        new Vue({
+            // Tat ca du lieu truyen qua HTML de o dang du lieu tho
+            // Computed thuc hien nhu 1 function nhung no chi duoc coi la 1 thuoc tinh
+            el: '#app',
+            data: {
+               a: 0, 
+               b: 0 
+            },
+            computed: {
+                tanga: function() {
+                    console.log('computed');
+                    console.log('Goi function a');
+                    return this.a;
+                },
+                tangb: function() {
+                    console.log('computed');
+                    console.log('Goi function b');
+                    return this.b;
+                }
+            },
+            methods: {
+                tangaf: function() {
+                    console.log('method');
+                    console.log('Goi function a');
+                    return this.a;
+                },
+                tangbf: function() {
+                    console.log('method');
+                    console.log('Goi function b');
+                    return this.b;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

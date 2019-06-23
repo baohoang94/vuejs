@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Component trong component - Example 3 - Allaravel.com</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <template id="hello-template">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>{{ message }} {{ userName }}</h1>
+            </div>
+        </div>
+    </template>
+    <template id="form-template">
+        <div class="row">
+            <div class="col-md-3">
+                <label for="name">Tên bạn là gì?</label>
+            </div>
+            <div class="col-md-9">
+                <input class="form-control" v-model="userName" type="text">
+            </div>
+        </div>
+    </template>
+    <template id="greeting-template">
+        <div>
+            <form-component :user-name="userName"></form-component>
+            <hello-component :user-name="userName"></hello-component>
+        </div>
+    </template>
+    <div class="container" id="app">
+        <greeting-component></hello-component>
+    </div>
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    <script type="text/javascript">
+        Vue.component('hello-component',{
+            data: function () {
+                return {
+                    message: 'Xin chào'
+                }
+            },
+            props: ['userName'],
+            template: '#hello-template'
+        })
+        Vue.component('form-component', {
+            template: '#form-template',
+            props: ['userName']
+        });
+        Vue.component('greeting-component', {
+            template: '#greeting-template',
+            data: function () {
+                return {
+                    userName: 'Allaravel'
+                }
+            }
+        });
+        new Vue({
+            el: '#app'
+        });
+    </script>
+</body>
+</html>

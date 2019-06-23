@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Vue instance - allaravel.com</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div id="app">
+        <p>{{ message }}</p>
+    </div>
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                message: 'Tài liệu Khóa học Vuejs miễn phí sẽ được hiển thị sau 3 giây!'
+            },
+            methods: {
+                alertUser: function (){
+                    alert('Nhấp ok để tải tài liệu!');
+                }
+            }
+        });
+        setTimeout(function (){
+            vm.alertUser();
+            vm.message = 'Click vào đây để tải!';
+        }, 3000);
+    </script>
+</body>
+</html>

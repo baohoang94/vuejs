@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vd3</title>
+</head>
+<body>
+    <div id="best_framework">
+        <h1>Top 5 PHP framework tốt nhất hiên nay:</h1>
+        <ul>
+            <li v-for="framework in frameworks | orderBy 'vote' -1"> {{ framework.name }}</li>
+        </ul>
+    </div>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.5/vue.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.min.js"></script>
+    <script type="text/javascript">
+        var myFrameworks = {
+            frameworks: [
+                { name: "CodeIgniter", vote: 40 },
+                { name: "Laravel", vote: 100 },
+                { name: "Symfony", vote: 35 },
+                { name: "Zend", vote: 18 },
+                { name: "Yii", vote: 7 }
+            ]
+        };
+
+        var myViewModel = new Vue({
+            el: '#best_framework',
+            data: myFrameworks
+        });
+    </script>
+</body>
+</html>

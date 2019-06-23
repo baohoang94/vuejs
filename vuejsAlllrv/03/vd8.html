@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Vue instance - allaravel.com</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Bộ đếm: {{ counter }}</h1>
+        <button @click="counter++">Tăng bộ đếm</button>
+    </div>
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                counter: 0
+            },
+        });
+        setTimeout(function() {
+            alert('Hủy Vue instance, không thể tăng bộ đếm được nữa!');
+            vm.$destroy();
+        }, 5000);
+    </script>
+</body>
+</html>

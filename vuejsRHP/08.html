@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Template vuejs</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="obj">
+        <p>{{ noidung }}</p>
+        <p>{{ sayHello() }}</p>
+        <p>{{ showPost() }}</p>
+    </div>
+    <script>
+        new Vue({
+            el: '#obj',
+            data: {
+                noidung: 'Day la noi dung cua vuejs',
+                title: 'Day la tie ude',
+                body: 'Day la noi dung bien body cua doi tuong data',
+            },
+            methods: {
+                sayHello: function() {
+                    document.write('Hello everyone!');
+                },
+                showPost: function() {
+                    return this.body;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

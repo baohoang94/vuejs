@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Template vuejs</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="obj">
+        <p>{{ noidung }}</p>
+        <p>{{ sayHello() }}</p>
+        <a v-bind:href="link">My Facebook</a>
+    </div>
+    <script>
+        new Vue({
+            el: '#obj',
+            data: {
+                noidung: 'Day la noi dung cua vuejs',
+                link: 'https://facebook.com/HoangBao199x'
+            },
+            methods: {
+                sayHello: function() {
+                    document.write('Hello everyone!');
+                }
+            }
+        })
+    </script>
+</body>
+</html>

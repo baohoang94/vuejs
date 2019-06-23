@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title>Vue instance - allaravel.com</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div id="vm1">
+        <h1>{{ name }}</h1>
+    </div>
+    <div id="vm2">
+        <button @click="showName">Show name</button>
+    </div>
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+    <script type="text/javascript">
+        var vm1 = new Vue({
+            el: '#vm1',
+            data: {
+                name: 'Vue Instance #1'
+            }
+        });
+
+        var vm2 = new Vue({
+            el: '#vm2',
+            methods: {
+                showName: function () {
+                    alert("The name of the other Vue instance is: ");
+                }
+            }
+        });
+
+        setTimeout(function () {
+            vm1.name = 'Hello from the other side!';
+        }, 2000);
+    </script>
+</body>
+
+</html>

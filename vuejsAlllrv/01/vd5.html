@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vd5</title>
+</head>
+
+<body>
+    <div id="example5">
+        Name: <input type="text" v-model="name">
+        <button v-on:click="myClickHandler">Xin chào</button>
+    </div>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.5/vue.min.js"></script> -->
+    <script src="https://unpkg.com/vue"></script>
+    <script type="text/javascript">
+        var myModel = {
+            name: "Kiên Đặng",
+            age: 35,
+            gender: "male"
+        };
+
+        var myViewModel = new Vue({
+            el: '#example5',
+            data: myModel,
+
+            // Phương thức quản lý sự kiện trong Vue
+            methods: {
+                myClickHandler: function(e) {
+                    alert("Chào mừng " + this.name + " đến với All Laravel");
+                }
+            }
+        });
+    </script>
+    
+</body>
+
+</html>
