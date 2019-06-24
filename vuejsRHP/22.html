@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Template vuejs</title>
+    <script src="vue.js"></script>
+    <style>
+        .vuong {
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+            display: inline-block;
+            margin: 10px;
+        }
+        .do {
+            background-color: red;
+        }
+        .xanhduong {
+            background-color: blue;
+        }
+        .xanhcay {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="vuong" @click="quanlido = !quanlido" :class="{do: quanlido}"></div>
+        <div class="vuong" :class="{do: quanlido}"></div>
+        <div class="vuong" :class="[color, {do: quanlido}]"></div>
+        <hr>
+        <input type="text" v-model="color">
+    </div>
+    <script>
+        // Bai tap chua lam: Nhap gia tri dung cua phep tinh tong thi o thu 3 se chuyen sang mau xanh, con neu tra loi sai thi o thu 3 se chuyen sang mau do
+        new Vue({
+            el: '#app',
+            data: {
+                quanlido: false,
+                color: 'xanhcay'
+            },
+            compured: {
+                divClasses: function() {
+                    return {
+                        do: this.quanlido,
+                        xanhduong: !this.quanlido,
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

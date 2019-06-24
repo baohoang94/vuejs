@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Template vuejs</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(menu, index) in menus">{{ menu }} voi index la {{ index }}</li>
+        </ul>
+
+        <button @click="menus.push('Test')">Add new item menu</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                menus: ['Home', 'About', 'Blog', 'Contact', 'FAQ'],
+            },
+            methods: {
+                
+            }
+        })
+    </script>
+</body>
+</html>
